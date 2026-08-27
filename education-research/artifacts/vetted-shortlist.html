@@ -1,0 +1,837 @@
+<title>The Vetted Shortlist — Peckham 11+ support</title>
+<style>
+  :root {
+    --paper: #F5F4EF; --paper-raised: #FFFFFF; --paper-sunk: #ECEBE3;
+    --ink: #1B2A25; --ink-soft: #4A554F; --ink-faint: #7A837D;
+    --line: #DEDCD2; --line-strong: #C9C7BB;
+    --brass: #9F6E28; --brass-ink: #6E4A16; --brass-soft: #F0E5CF;
+    --sage: #3F6857; --sage-ink: #2C4A3D; --sage-soft: #DDE8E1;
+    --warn-ink: #8A5A1E; --warn-soft: #F3E7D4;
+    --on-accent: #FFFFFF;
+    --shadow: 0 1px 2px rgba(27,42,37,.05), 0 8px 22px -12px rgba(27,42,37,.16);
+    --font-display: "Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style","Hoefler Text",Georgia,serif;
+    --font-body: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono: ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --measure: 66ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111714; --paper-raised: #1A231E; --paper-sunk: #0C110F;
+      --ink: #ECEBE2; --ink-soft: #A9B2AB; --ink-faint: #79837C;
+      --line: #29332D; --line-strong: #38443C;
+      --brass: #D4A24C; --brass-ink: #E7C179; --brass-soft: #2C2416;
+      --sage: #83AB93; --sage-ink: #A7CBB4; --sage-soft: #1E2A24;
+      --warn-ink: #E0B36B; --warn-soft: #2E2513;
+      --on-accent: #10160F;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #111714; --paper-raised: #1A231E; --paper-sunk: #0C110F;
+    --ink: #ECEBE2; --ink-soft: #A9B2AB; --ink-faint: #79837C;
+    --line: #29332D; --line-strong: #38443C;
+    --brass: #D4A24C; --brass-ink: #E7C179; --brass-soft: #2C2416;
+    --sage: #83AB93; --sage-ink: #A7CBB4; --sage-soft: #1E2A24;
+    --warn-ink: #E0B36B; --warn-soft: #2E2513;
+    --on-accent: #10160F;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+  }
+  :root[data-theme="light"] {
+    --paper: #F5F4EF; --paper-raised: #FFFFFF; --paper-sunk: #ECEBE3;
+    --ink: #1B2A25; --ink-soft: #4A554F; --ink-faint: #7A837D;
+    --line: #DEDCD2; --line-strong: #C9C7BB;
+    --brass: #9F6E28; --brass-ink: #6E4A16; --brass-soft: #F0E5CF;
+    --sage: #3F6857; --sage-ink: #2C4A3D; --sage-soft: #DDE8E1;
+    --warn-ink: #8A5A1E; --warn-soft: #F3E7D4;
+    --on-accent: #FFFFFF;
+    --shadow: 0 1px 2px rgba(27,42,37,.05), 0 8px 22px -12px rgba(27,42,37,.16);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-body); font-size: 16.5px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 26px; }
+  a { color: var(--brass-ink); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+  h1,h2,h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; line-height: 1.15; }
+  p { max-width: var(--measure); }
+  .eyebrow { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin: 0; }
+
+  /* Hero */
+  header.hero { border-bottom: 1px solid var(--line);
+    background: radial-gradient(120% 90% at 90% -20%, var(--brass-soft) 0%, transparent 55%), var(--paper); }
+  .hero-inner { padding: 66px 0 40px; display: grid; gap: 20px; }
+  .hero h1 { font-size: clamp(2.1rem, 4.8vw, 3.35rem); margin: 0; letter-spacing: -.01em; }
+  .hero h1 .accent { color: var(--brass-ink); font-style: italic; }
+  .hero .lede { font-size: 1.16rem; color: var(--ink-soft); max-width: 60ch; }
+  .hero .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; }
+
+  /* Sticky nav */
+  nav.toc { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav.toc ul { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; margin: 0; padding: 10px 26px; max-width: 1120px; margin: 0 auto; }
+  nav.toc a { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .03em; text-decoration: none; color: var(--ink-soft); padding: 6px 11px; border-radius: 999px; border: 1px solid transparent; }
+  nav.toc a:hover { border-color: var(--line-strong); color: var(--ink); }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 16px; padding: 18px 0 4px; align-items: center; font-size: .82rem; color: var(--ink-soft); }
+  .legend .leg { display: inline-flex; align-items: center; gap: 7px; }
+
+  /* Tags */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--ink-soft); white-space: nowrap; }
+  .tag.now { background: var(--sage-soft); color: var(--sage-ink); border-color: transparent; }
+  .tag.later { background: transparent; color: var(--ink-faint); }
+  .tag.local { background: var(--sage-soft); color: var(--sage-ink); border-color: transparent; }
+  .tag.hop { color: var(--ink-soft); }
+  .tag.trek { color: var(--warn-ink); border-color: color-mix(in srgb, var(--warn-ink) 40%, transparent); }
+  .tag.online { color: var(--ink-soft); border-style: dashed; }
+  .tag.free { background: var(--sage); color: var(--on-accent); border-color: transparent; }
+  .tag.top { background: var(--brass); color: var(--on-accent); border-color: transparent; font-weight: 600; }
+  .tag.verify { border-style: dashed; color: var(--warn-ink); border-color: color-mix(in srgb, var(--warn-ink) 45%, transparent); }
+
+  /* Sections */
+  section { padding: 46px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 52px; }
+  .sec-head { display: grid; gap: 10px; margin-bottom: 22px; max-width: 74ch; }
+  .sec-head h2 { font-size: clamp(1.55rem, 3vw, 2.05rem); margin: 0; }
+  .sec-num { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--brass-ink); text-transform: uppercase; }
+  .sec-head p { color: var(--ink-soft); margin: 0; font-size: .98rem; }
+  .subhead { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin: 30px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+
+  /* Callout */
+  .callout { background: var(--paper-raised); border: 1px solid var(--line); border-left: 3px solid var(--brass); border-radius: 4px; padding: 20px 24px; box-shadow: var(--shadow); max-width: var(--measure); margin: 0 0 8px; }
+  .callout h3 { font-family: var(--font-body); font-size: 1rem; margin: 0 0 6px; }
+  .callout p { font-size: .92rem; color: var(--ink-soft); margin: 0; }
+  .callout.sage { border-left-color: var(--sage); }
+
+  /* Operating model strip */
+  .model { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 4px; }
+  @media (max-width: 780px) { .model { grid-template-columns: 1fr 1fr; } }
+  .step { background: var(--paper-sunk); border: 1px solid var(--line); border-radius: 6px; padding: 15px 16px; display: grid; gap: 4px; align-content: start; }
+  .step .n { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; color: var(--brass-ink); text-transform: uppercase; }
+  .step h4 { margin: 0; font-family: var(--font-body); font-size: .92rem; }
+  .step p { margin: 0; font-size: .8rem; color: var(--ink-soft); max-width: none; }
+
+  /* Card grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(288px, 1fr)); gap: 15px; }
+  .card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 18px 18px 16px; box-shadow: var(--shadow); display: grid; gap: 10px; align-content: start; }
+  .card.is-top { border-color: color-mix(in srgb, var(--brass) 55%, var(--line)); }
+  .card-top { display: grid; gap: 8px; }
+  .card h3 { font-family: var(--font-body); font-weight: 700; font-size: 1.02rem; margin: 0; letter-spacing: -.01em; line-height: 1.25; }
+  .card .kind { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); }
+  .card p.desc { font-size: .875rem; line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: none; }
+  .meta { display: grid; gap: 5px; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px; }
+  .meta .row { display: grid; grid-template-columns: 62px 1fr; gap: 8px; font-size: .8rem; }
+  .meta .row .lab { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); padding-top: 2px; }
+  .meta .row .val { color: var(--ink); }
+  .meta .row .val.price { font-family: var(--font-mono); font-size: .78rem; font-variant-numeric: tabular-nums; }
+  .card .link { font-family: var(--font-mono); font-size: .72rem; }
+  .card .link a { text-decoration: none; }
+  .card .link a:hover { text-decoration: underline; }
+
+  /* Note block */
+  .note { font-size: .85rem; color: var(--ink-faint); font-style: italic; margin: 16px 0 0; max-width: var(--measure); }
+
+  footer { padding: 40px 0 64px; }
+  footer .disc { font-size: .8rem; color: var(--ink-faint); font-style: italic; max-width: var(--measure); border-top: 1px solid var(--line); padding-top: 18px; }
+
+  @media (prefers-reduced-motion: no-preference) { .card { transition: transform .16s ease, box-shadow .16s ease; } .card:hover { transform: translateY(-2px); } }
+</style>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Vetted directory · South London · Prepared July 2026</p>
+    <h1>The <span class="accent">vetted shortlist</span>: assessors, activities &amp; camps</h1>
+    <p class="lede">A researched, quality-filtered directory of the people and programmes that build an all-round profile toward 11+ — the annual-assessment "spine," STEM and academic enrichment, the all-rounder strands, and holiday camps — all judged on reach from Peckham (SE15).</p>
+    <div class="meta">
+      <span>Child: age 4 · Reception from Sept 2026</span>
+      <span>Interest: STEM / maths</span>
+      <span>Filter: quality + reachability from SE15</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <ul>
+    <li><a href="#assess">01 · Assessment &amp; oversight</a></li>
+    <li><a href="#stem">02 · STEM &amp; academic</a></li>
+    <li><a href="#allround">03 · Music, drama &amp; sport</a></li>
+    <li><a href="#camps">04 · Holiday camps</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <div class="legend" aria-label="Tag key">
+    <span class="leg"><span class="tag top">Top pick</span></span>
+    <span class="leg"><span class="tag now">Starts now · age 4</span></span>
+    <span class="leg"><span class="tag later">Age-gated</span></span>
+    <span class="leg"><span class="tag local">Local to SE15</span></span>
+    <span class="leg"><span class="tag hop">Short hop</span></span>
+    <span class="leg"><span class="tag trek">A trek</span></span>
+    <span class="leg"><span class="tag online">Online</span></span>
+    <span class="leg"><span class="tag free">Free</span></span>
+    <span class="leg"><span class="tag verify">Verify details</span></span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ 01 ASSESSMENT ============ -->
+  <section id="assess">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01 — The spine</span>
+        <h2>Assessment &amp; long-term academic oversight</h2>
+        <p>The purchase that actually answers "is he being stretched?" — an objective cognitive baseline now, then periodic academic benchmarking through primary, held together by one standing advisor. This is the part a state school won't do.</p>
+      </div>
+
+      <div class="callout">
+        <h3>⚠︎ Get the test right: at four it's the WPPSI-IV, not the WISC-V</h3>
+        <p>The widely-quoted WISC-V only starts at <strong>age 6</strong>. A four-year-old is assessed on the <strong>WPPSI-IV</strong> (ages 2y6m–7y7m). Any assessor offering to "WISC" him now is being loose with terminology — confirm they use the age-appropriate instrument before booking.</p>
+      </div>
+
+      <div class="model" aria-label="Suggested operating model">
+        <div class="step"><span class="n">Now · age 4–5</span><h4>Cognitive baseline</h4><p>One objective read from an educational psychologist (WPPSI-IV) or Potential Plus Early Years.</p></div>
+        <div class="step"><span class="n">Annual / biennial</span><h4>Academic benchmark</h4><p>Consultancy assessment placing him vs peers &amp; target schools; repeat as a check.</p></div>
+        <div class="step"><span class="n">Ongoing</span><h4>Standing advisor</h4><p>One retained consultant/mentor steering enrichment &amp; the 7+/11+ decision.</p></div>
+        <div class="step"><span class="n">If picture shifts</span><h4>EP re-test</h4><p>Only re-assess with a psychologist if something materially changes.</p></div>
+      </div>
+
+      <div class="subhead">Full-service consultancies — assessment + long-term advisory / mentoring</div>
+      <div class="grid">
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Top pick</span><span class="tag local">Battersea SW11</span></div>
+            <h3>Bonas MacFarlane</h3>
+            <span class="kind">Consultancy · mentoring · assessment · est. ~1992</span>
+          </div>
+          <p class="desc">The closest of the big firms (south of the river) and the one whose model is explicitly <strong>long-term academic mentoring</strong> — designed to push a child "a level beyond expectations" — backed by a dedicated assessment arm. Best fit for an in-person, ongoing check-in relationship.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">SW11 base + in-home London-wide &amp; online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Bespoke · enquire (pre-test course cited ~£400/wk)</span></div>
+          </div>
+          <div class="link"><a href="https://bonasmacfarlane.co.uk/">bonasmacfarlane.co.uk ↗</a></div>
+        </div>
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Top pick</span><span class="tag hop">London-wide</span></div>
+            <h3>Keystone Tutors</h3>
+            <span class="kind">Consultancy · assessment · school advisory · est. 2007</span>
+          </div>
+          <p class="desc">The blue-chip anchor. Custom <strong>benchmarking assessments</strong> that place him against peers and target schools, plus a separate independent/prep-school advisory arm and a stable full-time tutor pool for year-on-year continuity.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">In-home London-wide + online; central office</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Tutoring £86–£111/hr inc VAT · £96 reg · assessment fee enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.keystonetutors.com/">keystonetutors.com ↗</a></div>
+        </div>
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Impartial</span><span class="tag online">Online / national</span></div>
+            <h3>Good Schools Guide — Education Consultants</h3>
+            <span class="kind">Impartial assessment &amp; advisory</span>
+          </div>
+          <p class="desc">They don't sell tuition, so their assessment isn't a funnel into their own hours — ideal as a periodic <strong>independent second opinion</strong>. Adaptive or written benchmarking papers, plus a grammar-school service.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">Online / adaptive or written; consultancy nationwide</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Assessments £240–£700 · grammar assess. £420/90min</span></div>
+          </div>
+          <div class="link"><a href="https://www.goodschoolsguide.co.uk/education-consultants">goodschoolsguide.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag local">Brixton / Camberwell SW9</span></div>
+            <h3>Minerva Tutors</h3>
+            <span class="kind">Tutoring · placement · mentoring · est. 2014</span>
+          </div>
+          <p class="desc">The most <strong>geographically local</strong> agency (SW9, minutes from SE15). School search &amp; placement plus a mentoring team. Its assessment/oversight arm is lighter than Keystone or Bonas, but the proximity is a real practical plus.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">SW9 base; in-home + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://minervatutors.co.uk/">minervatutors.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag online">One-off · repeatable</span></div>
+            <h3>Owl Tutors</h3>
+            <span class="kind">Qualified-teacher agency · assessments · est. 2011</span>
+          </div>
+          <p class="desc">Clean, low-commitment <strong>one-off assessments</strong> (English / maths / reasoning paper at home + written feedback + an hour of expert phone time) — ideal to repeat annually as a benchmark. All tutors are qualified teachers.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">In-home London + online worldwide</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">£95 placement fee · assessment fee enquire</span></div>
+          </div>
+          <div class="link"><a href="https://owltutors.co.uk/assessments/">owltutors.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London-wide</span></div>
+            <h3>Simply Learning Tuition</h3>
+            <span class="kind">Consultancy · pathway planning · est. 2009</span>
+          </div>
+          <p class="desc">Education-pathway planning, placement, and academic + pastoral mentoring; assessments feed "advice on which schools to realistically aim for." Award-winning consultancy team.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London-wide + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.simplylearningtuition.co.uk/education-consultants/">simplylearningtuition.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London-wide</span></div>
+            <h3>Enjoy Education</h3>
+            <span class="kind">Nursery-to-university consultancy · est. 2006</span>
+          </div>
+          <p class="desc">Positions itself as a long-term "support system" from nursery onward — schools consultancy, tutoring, mentoring and access to assessment/learning-support specialists. ~20-year track record.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London-wide + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Arrangement fee from ~£98 · rest enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.enjoyeducation.co.uk/">enjoyeducation.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London-wide</span></div>
+            <h3>Ivy Education</h3>
+            <span class="kind">Consultancy · assessment · mentorship · est. 2010</span>
+          </div>
+          <p class="desc">Nursery-to-university admissions consultancy underpinned by assessment services that build "a complete academic profile," plus long-term mentorship. Strong reputation in the London prep/senior market.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.ivyeducation.co.uk/">ivyeducation.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London-wide</span></div>
+            <h3>Holland Park Education</h3>
+            <span class="kind">Tutoring · consultancy · mentoring · est. 2004</span>
+          </div>
+          <p class="desc">Advises on best-fit schools, runs mock interviews/assessments for competitive schools, and offers mentoring through transitions. 20-year history, global footprint.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">In-home London + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.hollandparkeducation.com/">hollandparkeducation.com ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London-wide</span><span class="tag verify">Placement-led</span></div>
+            <h3>William Clarence Education</h3>
+            <span class="kind">School placement · assessment · commission-free</span>
+          </div>
+          <p class="desc">Assessment-led placement: consultation → in-house academic assessment + interview → shortlist of best-fit schools. Explicitly takes no school commissions, which supports impartial advice. Oriented to placement rather than annual benchmarking.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + international / online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">~one term's independent-school fee (quoted upfront)</span></div>
+          </div>
+          <div class="link"><a href="https://www.williamclarence.com/">williamclarence.com ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">Mayfair</span><span class="tag verify">Advisory-weighted</span></div>
+            <h3>Gabbitas</h3>
+            <span class="kind">Heritage consultancy · est. 1873</span>
+          </div>
+          <p class="desc">The oldest education consultancy in the world — strong on independent-school selection advice, interview technique and assessment. Its assessment centre of gravity is school-entrance/UKiset rather than young-child cognitive benchmarking.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://gabbitas.com/">gabbitas.com ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">Global / UHNW</span></div>
+            <h3>Carfax Education</h3>
+            <span class="kind">Premium consultancy + mentorship</span>
+          </div>
+          <p class="desc">Impartial consultancy nursery→university with academic mentorship and bespoke tutoring, pitched at the very top of the market. Multi-city (London HQ).</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + global / online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Premium · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://www.carfax-education.com/">carfax-education.com ↗</a></div>
+        </div>
+
+      </div>
+
+      <div class="subhead">Educational / child psychologists — the objective cognitive baseline</div>
+      <div class="grid">
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Top pick</span><span class="tag now">Assesses from age 4</span><span class="tag hop">Chelsea SW3</span></div>
+            <h3>The Chelsea Psychology Clinic</h3>
+            <span class="kind">HCPC-registered psychologists · est. 2016</span>
+          </div>
+          <p class="desc">One of the few clinics naming <strong>age 4 as its floor</strong>, and it explicitly frames output for gifted children — identifying talents and recommending enrichment. Cognitive + academic + behavioural assessment with report. Free 15-min intro call.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">SW3 (across the river) + remote options</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Bespoke · enquire (peers £850–£2,000)</span></div>
+          </div>
+          <div class="link"><a href="https://www.thechelseapsychologyclinic.com/children-adolescents/private-educational-psychology-assessments/">thechelseapsychologyclinic.com ↗</a></div>
+        </div>
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Top pick</span><span class="tag hop">London + remote</span></div>
+            <h3>The Ed Psych Practice</h3>
+            <span class="kind">BPS-Chartered, Tavistock-trained EPs</span>
+          </div>
+          <p class="desc">Educational cognitive assessments mapping strengths and needs with standardised tests, from psychologists with strong professional credentials. Good for the "what's his profile / is he stretched" question.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London-based + remote</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire · (confirm WPPSI for age 4)</span></div>
+          </div>
+          <div class="link"><a href="https://www.theedpsych.com/educational-psychologist-london">theedpsych.com ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag online">Face-to-face or remote</span><span class="tag verify">Std battery = age 6+</span></div>
+            <h3>CF Psychology</h3>
+            <span class="kind">HCPC-registered psychology practice</span>
+          </div>
+          <p class="desc">Full assessment (WISC-V + WIAT-III, i.e. cognitive + attainment) with a parent feedback meeting; ~3.5–4 hours plus written report. Confirm the youngest age they take — the standard battery is age 6+.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">Remote available London-wide</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">£950</span></div>
+          </div>
+          <div class="link"><a href="https://cfpsychology.co.uk/children/cognitive-assessments-for-children/">cfpsychology.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London + online</span><span class="tag verify">Age 6–17</span></div>
+            <h3>Forward Thinking</h3>
+            <span class="kind">HCPC-registered clinical psychologists</span>
+          </div>
+          <p class="desc">Cognitive (IQ) assessment with full report + feedback. Standard battery is ages 6–17, so better as a follow-up at 6+ than the age-4 baseline.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + online</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">£900</span></div>
+          </div>
+          <div class="link"><a href="https://www.weareforwardthinking.co.uk/cognitive-assessments">weareforwardthinking.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London + remote</span></div>
+            <h3>Children's Wellness Centre</h3>
+            <span class="kind">Educational psychology assessment</span>
+          </div>
+          <p class="desc">Educational psychology assessment package — initial call, assessment, verbal feedback and written report. Confirm youngest age and instrument used.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London + remote</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">£895</span></div>
+          </div>
+          <div class="link"><a href="https://www.childrenswellnesscentre.co.uk/educational-psychology/">childrenswellnesscentre.co.uk ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag hop">London</span><span class="tag verify">Diagnostic depth</span></div>
+            <h3>Harwood Child Psychology</h3>
+            <span class="kind">Comprehensive learning assessment</span>
+          </div>
+          <p class="desc">A thorough learning assessment (IQ + learning strengths/weaknesses + specific-learning-difficulty analysis). Deeper — and pricier — than a straight cognitive baseline; best if you want a full picture.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">London</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">£1,995</span></div>
+          </div>
+          <div class="link"><a href="https://harwoodchildpsychology.co.uk/learning-assessments/">harwoodchildpsychology.co.uk ↗</a></div>
+        </div>
+
+      </div>
+
+      <div class="subhead">"Able, gifted &amp; talented" specialists — the exact worry driving this</div>
+      <div class="grid">
+
+        <div class="card is-top">
+          <div class="card-top">
+            <div class="tags"><span class="tag top">Best age-4 match</span><span class="tag now">Early Years · ages 3–4</span><span class="tag trek">Milton Keynes</span></div>
+            <h3>Potential Plus UK</h3>
+            <span class="kind">National charity for high learning potential · est. 1967</span>
+          </div>
+          <p class="desc">Impartial (a charity, not selling tuition) and uniquely age-appropriate: its <strong>Early Years Assessment of Potential (ages 3–4)</strong> is purpose-built for exactly this. Ongoing family membership gives resources and guidance on stretching an able child and pushing school for challenge.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">In-person at Milton Keynes (~1hr by train); later tiers remote</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">HLP assess. £620 members / £750 non · Early Years enquire</span></div>
+          </div>
+          <div class="link"><a href="https://potentialplusuk.org/index.php/families/assessments-for-children/early-years-assessment-of-potential/">potentialplusuk.org ↗</a></div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="tags"><span class="tag online">National / online</span></div>
+            <h3>Mensa Gifted Child &amp; Advanced Assessments</h3>
+            <span class="kind">Parent guidance + G&amp;T programme design</span>
+          </div>
+          <p class="desc">Mensa's Gifted Child service offers parent consultations, workshops and materials on nurturing a highly able child; Advanced Assessments pairs assessment with bespoke gifted-and-talented development plans. A useful supplementary parent-strategy resource.</p>
+          <div class="meta">
+            <div class="row"><span class="lab">Reach</span><span class="val">Largely online / nationwide</span></div>
+            <div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div>
+          </div>
+          <div class="link"><a href="https://mensa.org.uk/highly-able-children/">mensa.org.uk ↗</a></div>
+        </div>
+
+      </div>
+      <p class="note">Suggested spine: a WPPSI-IV baseline (an EP, or Potential Plus Early Years) at age 4–5 → an annual/biennial academic benchmark via one consultancy (Bonas MacFarlane or Keystone; or the impartial Good Schools Guide gauge) → an EP re-test only if the picture changes. Keep one consultancy as the standing "what next" advisor into the 7+/11+ decision.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 STEM ============ -->
+  <section id="stem">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02 — Weighted to his interest</span>
+        <h2>STEM &amp; academic enrichment</h2>
+        <p>At 4–5 the genuine unlocks are Explore Learning, Kumon, RoboThink, Horniman and chess from ~5. The serious coding/robotics providers (Fire Tech &amp; co.) start at 8–9 — diarise them. Aim for depth over drill.</p>
+      </div>
+
+      <div class="subhead">Coding &amp; robotics</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Local pathway</span><span class="tag local">Peckham / Camberwell libraries</span><span class="tag later">Age 7+</span></div>
+          <h3>Ignite Hubs — Code Hub</h3><span class="kind">Community coding club (Scratch → Python)</span></div>
+          <p class="desc">Levelled weekly classes at your own libraries — the natural local coding pathway before stepping up to Fire Tech. Social-enterprise ethos with bursaries.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">7–18</span></div><div class="row"><span class="lab">Price</span><span class="val price">£80/term · funded places available</span></div></div>
+          <div class="link"><a href="https://www.ignitehubs.org.uk/peckham-library/">ignitehubs.org.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">From age 4</span><span class="tag verify">Venue franchise</span></div>
+          <h3>RoboThink UK</h3><span class="kind">Robotics &amp; coding · tiered 4–14</span></div>
+          <p class="desc">One of the very few that starts at 4 ("Junior Engineers"), with a structured progression to real coding. Delivered via franchise/venues — confirm an active South-London operator.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–14</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div></div>
+          <div class="link"><a href="https://robothink.co.uk/">robothink.co.uk ↗</a></div>
+        </div>
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Premium · later</span><span class="tag later">Age 8/9+</span><span class="tag trek">Imperial, SW7 + online</span></div>
+          <h3>Fire Tech</h3><span class="kind">Coding · AI · game dev · robotics</span></div>
+          <p class="desc">The strongest reputation in UK kids' tech — tutors from top-university CS/engineering cohorts, ambitious content. Bank it as the aspirational destination once he ages in; online removes the travel.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">8–17 (online from 8)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Python week from ~£320</span></div></div>
+          <div class="link"><a href="https://www.firetech.com/">firetech.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">~Age 5/6+</span><span class="tag trek">N/W-weighted venues</span></div>
+          <h3>Cypher Coders</h3><span class="kind">Creative, project-based coding camps</span></div>
+          <p class="desc">Creative angle (code linked to art/music/fashion), well-regarded. London camps are north/west-weighted — a Peckham-local venue isn't confirmed, so treat as a trek unless a closer one runs.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">~5/6–12</span></div><div class="row"><span class="lab">Price</span><span class="val price">Early-bird ~£300/week (verify)</span></div></div>
+          <div class="link"><a href="https://www.cyphercoders.com/">cyphercoders.com ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Maths — enrichment vs. fluency</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Best local backbone</span><span class="tag now">From age 4</span><span class="tag hop">Brixton / New Cross Gate</span></div>
+          <h3>Explore Learning</h3><span class="kind">Centre tuition · maths + English · adaptive</span></div>
+          <p class="desc">Takes him now, genuinely reachable, and builds confidence and a "love of learning" rather than pure drill — with a clear 11+ pathway later. The best-value, best-located academic anchor.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–16</span></div><div class="row"><span class="lab">Price</span><span class="val price">~£114/mo (1×/wk) → ~£149/mo (2×/wk)</span></div></div>
+          <div class="link"><a href="https://www.explorelearning.co.uk/tuition-centre/london-brixton/">explorelearning.co.uk ↗</a></div>
+        </div>
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Genuine depth</span><span class="tag online">Online</span></div>
+          <h3>KidMathClubs — Maths Circle</h3><span class="kind">Olympiad-style enrichment</span></div>
+          <p class="desc">The one option offering real mathematical <strong>depth</strong> — olympiad-flavoured reasoning, the antidote to drill. Ideal for a mathsy child; grows with him toward the Junior Maths Challenge. Pair with Explore Learning for breadth.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">Primary upward (levelled)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div></div>
+          <div class="link"><a href="https://www.kidmathclubs.com/">kidmathclubs.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">From age 3–4</span><span class="tag local">Peckham SE15</span><span class="tag verify">Drill, not enrichment</span></div>
+          <h3>Kumon — Peckham</h3><span class="kind">Worksheet maths &amp; English</span></div>
+          <p class="desc">Extremely local and good for building fluency and discipline — but it's repetition, not rich problem-solving. Best as a fluency foundation paired with something conceptual.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">From ~3–4</span></div><div class="row"><span class="lab">Price</span><span class="val price">£70/subject/month (+£40 reg)</span></div></div>
+          <div class="link"><a href="https://www.kumon.co.uk/peckham">kumon.co.uk/peckham ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag local">Dulwich</span><span class="tag verify">Franchise-variable</span></div>
+          <h3>Mathnasium — Dulwich</h3><span class="kind">Diagnostic-led maths tutoring</span></div>
+          <p class="desc">More conceptual than Kumon — teaches the "why," with custom plans from a diagnostic. Short bus from SE15.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">School-age</span></div><div class="row"><span class="lab">Price</span><span class="val price">UK typically ~£300/mo (verify)</span></div></div>
+          <div class="link"><a href="https://www.mathnasium.com/uk/maths-centres/dulwich">mathnasium.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Age 7–11</span><span class="tag online">Online</span></div>
+          <h3>Atom Learning</h3><span class="kind">Adaptive 11+ / KS2 platform</span></div>
+          <p class="desc">Strong adaptive platform (maths, English, reasoning, science) that keeps difficulty at his optimal level, with parent reporting. Excellent 11+ supplement from age 7 — not a substitute for human depth.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">7–11</span></div><div class="row"><span class="lab">Price</span><span class="val price">£39.99–£69.99/mo · 5-day trial</span></div></div>
+          <div class="link"><a href="https://www.atomlearning.com/11-plus">atomlearning.com ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Science &amp; discovery</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Local gem</span><span class="tag now">Family + KS1</span><span class="tag local">Forest Hill · 10 min</span><span class="tag free">Free entry</span></div>
+          <h3>Horniman Museum &amp; Gardens</h3><span class="kind">Museum · workshops · holiday science</span></div>
+          <p class="desc">Ten minutes on the Overground, free to enter, with real natural-history collections, holiday science/robotics pop-ups and pond-dipping. Nothing else is this good <em>and</em> this local for a curious STEM child.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">Broad; KS1 up</span></div><div class="row"><span class="lab">Price</span><span class="val price">Free entry · workshops priced individually</span></div></div>
+          <div class="link"><a href="https://www.horniman.ac.uk/">horniman.ac.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Age 5+</span><span class="tag local">Dulwich</span></div>
+          <h3>Mad Science</h3><span class="kind">After-school clubs &amp; holiday camps</span></div>
+          <p class="desc">High-energy, hands-on "edutainment" science (electricity, chemistry, magnetism). Broad-appeal rather than rigorous, but excellent for sparking interest early. Runs in Dulwich.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5–11</span></div><div class="row"><span class="lab">Price</span><span class="val price">Per club/camp · enquire</span></div></div>
+          <div class="link"><a href="https://london.madscience.org/">london.madscience.org ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">From age 3</span><span class="tag trek">Chelsea / Kensington</span></div>
+          <h3>Little House of Science</h3><span class="kind">Hands-on science classes &amp; camps</span></div>
+          <p class="desc">Excellent, properly experiment-led curriculum ("hands-on and brains-on"). A real trek from SE15 (45–60 min) — the quality may justify it for a holiday camp.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">3–12</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div></div>
+          <div class="link"><a href="https://www.littlehouseofscience.com/">littlehouseofscience.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">From age 4</span><span class="tag hop">Whitechapel · 25–30 min</span><span class="tag free">Free / low cost</span></div>
+          <h3>Centre of the Cell</h3><span class="kind">Biomedical science inside working QMUL labs</span></div>
+          <p class="desc">Unique — the world's first science centre inside biomedical research labs. Serious, credible, largely free. Reachable for occasional visits rather than weekly.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">From 4 (esp. Y3–9)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Often free · book ahead</span></div></div>
+          <div class="link"><a href="https://www.centreofthecell.org/">centreofthecell.org ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Chess — the cheap, high-signal reasoning builder</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Free &amp; real play</span><span class="tag hop">Streatham SW16</span><span class="tag free">Free</span></div>
+          <h3>Streatham &amp; Brixton Chess Club</h3><span class="kind">Established club · juniors welcome</span></div>
+          <p class="desc">Long-running club with real league play — great for developing against varied opponents once he's ~5–6 (under-10s accompanied). Free Tuesday sessions.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">All (accompanied under 10)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Free</span></div></div>
+          <div class="link"><a href="https://streathamchess.org/">streathamchess.org ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag local">Herne Hill SE24</span><span class="tag verify">Confirm running</span></div>
+          <h3>Richard Weekes Chess Academy</h3><span class="kind">Junior coaching · schools across SE London</span></div>
+          <p class="desc">Structured junior coaching with a schools footprint across Southwark/Lambeth/Lewisham — a good pipeline into competitive chess. Verify current venues (an older source suggested some had moved).</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">Primary juniors</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div></div>
+          <div class="link"><a href="https://www.rwcworldwide.com/">rwcworldwide.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Ages 5–16</span><span class="tag trek">Chelsea SW10</span></div>
+          <h3>SW London Junior Chess Club</h3><span class="kind">Junior-specialist coaching + camps</span></div>
+          <p class="desc">The most serious junior-specific coaching found (beginner → tournament), with holiday camps — just not local (~45–60 min). Worth it for camps if nothing closer suits.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5–16</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · enquire</span></div></div>
+          <div class="link"><a href="https://www.swchess.co.uk/">swchess.co.uk ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 ALL-ROUND ============ -->
+  <section id="allround">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03 — The all-rounder</span>
+        <h2>Music, drama &amp; sport</h2>
+        <p>The slow-maturing strands top schools interview for — start these earliest; they compound over years. Music scholarships and confident, articulate interviewees both trace back to what begins now.</p>
+      </div>
+
+      <div class="callout sage">
+        <h3>A note on this section's sourcing</h3>
+        <p>The dedicated agent for this strand hit an API limit mid-run, so these are compiled from the earlier research and the overlaps the camps agent surfaced. They're accurate as directions to pursue, but I've been conservative on prices — <strong>treat every figure here as "verify directly."</strong></p>
+      </div>
+
+      <div class="subhead">Music — tuition &amp; the prestige Saturday schools</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Prestige destination</span><span class="tag later">Ages 5–18 · audition</span><span class="tag hop">Waterloo · Saturdays</span></div>
+          <h3>Centre for Young Musicians (CYM)</h3><span class="kind">Specialist Saturday music school · Morley College</span></div>
+          <p class="desc">London's flagship Saturday music school — the credential that signals a serious young musician and a natural target to aim an instrument toward. Reachable from SE15.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5–18 (plays an instrument)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Termly · means-tested bursaries · verify</span></div></div>
+          <div class="link"><a href="https://cym.org.uk/">cym.org.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Audition · later years</span><span class="tag hop">Central London · Saturdays</span></div>
+          <h3>Junior Guildhall / Junior Trinity / Junior RAM</h3><span class="kind">Junior conservatoires</span></div>
+          <p class="desc">The audition-standard Saturday junior departments of the London conservatoires — the top of the youth-music tree once he's playing seriously. Aspirational, highly selective.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">~8+ (varies) audition</span></div><div class="row"><span class="lab">Price</span><span class="val price">Termly · scholarships · verify</span></div></div>
+          <div class="link"><a href="https://www.gsmd.ac.uk/junior-guildhall">gsmd.ac.uk ↗</a></div>
+        </div>
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Scholarship prep</span><span class="tag now">Age 5+</span><span class="tag local">East Dulwich / Peckham Rye</span></div>
+          <h3>SE22 Piano School</h3><span class="kind">Community music school · Sat mornings</span></div>
+          <p class="desc">Local tuition that explicitly prepares children for <strong>music scholarships and aptitude tests</strong> — directly relevant to independent-school music awards. Very reachable.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5+</span></div><div class="row"><span class="lab">Price</span><span class="val price">Per lesson/term · verify</span></div></div>
+          <div class="link"><a href="https://www.se22piano.co.uk/">se22piano.co.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Age 5+</span><span class="tag local">Camberwell / Peckham Rye</span></div>
+          <h3>Dulwich Piano Lessons</h3><span class="kind">Private piano tuition · Saturdays</span></div>
+          <p class="desc">Local Saturday-morning piano tuition serving East Dulwich, Camberwell and Peckham Rye — a convenient, low-friction way to start an instrument.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5+</span></div><div class="row"><span class="lab">Price</span><span class="val price">Per lesson · verify</span></div></div>
+          <div class="link"><a href="https://www.dulwichpianolessons.com/">dulwichpianolessons.com ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Drama, public speaking &amp; confidence</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Most local</span><span class="tag now">Ages 3–18</span><span class="tag local">Peckham SE15</span></div>
+          <h3>Theatre Peckham</h3><span class="kind">Youth performing arts · 28+ years</span></div>
+          <p class="desc">A well-regarded local institution on your doorstep — acting, singing, musical theatre, dance. Confidence and articulacy that pay off directly in 11+ interviews.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">3–18</span></div><div class="row"><span class="lab">Price</span><span class="val price">Termly · verify</span></div></div>
+          <div class="link"><a href="https://www.theatrepeckham.co.uk/">theatrepeckham.co.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Ages 4–18</span><span class="tag local">Dulwich · weekends</span></div>
+          <h3>Stagecoach Dulwich</h3><span class="kind">Drama, singing &amp; dance</span></div>
+          <p class="desc">National performing-arts brand — really a confidence-and-articulacy programme. Weekend classes in Dulwich, ages 4+, with holiday workshops too.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–18</span></div><div class="row"><span class="lab">Price</span><span class="val price">Termly · verify</span></div></div>
+          <div class="link"><a href="https://www.stagecoach.co.uk/dulwich">stagecoach.co.uk/dulwich ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Ages 4–10</span><span class="tag hop">Dulwich College grounds</span></div>
+          <h3>Perform</h3><span class="kind">Drama + dance + singing · LAMDA route later</span></div>
+          <p class="desc">High-energy drama courses focused on confidence, with a pathway toward LAMDA speech &amp; drama exams (excellent for interview poise) as he grows.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–10 (classes &amp; holidays)</span></div><div class="row"><span class="lab">Price</span><span class="val price">Termly/course · verify</span></div></div>
+          <div class="link"><a href="https://www.perform.org.uk/">perform.org.uk ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Sport — pathways reachable from SE15</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">On your doorstep</span><span class="tag now">Ages 4–12</span><span class="tag local">Peckham SE15</span></div>
+          <h3>We Make Footballers — Peckham</h3><span class="kind">FA-style football academy</span></div>
+          <p class="desc">A dedicated Peckham academy with weekly sessions and holiday camps, all abilities, structured coaching pathway. As local as sport gets.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–12</span></div><div class="row"><span class="lab">Price</span><span class="val price">Per term/camp · verify</span></div></div>
+          <div class="link"><a href="https://www.wemakefootballers.com/peckham/">wemakefootballers.com/peckham ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Age 5+</span><span class="tag hop">Dulwich Common SE21</span></div>
+          <h3>Dulwich College Sports Club</h3><span class="kind">Tennis, swimming, multi-sport · superb facilities</span></div>
+          <p class="desc">Access to a top independent school's facilities (25m pool, floodlit astro, tennis, athletics track) via junior coaching and holiday courses — e.g. 4-day junior tennis camps at ~£100.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5–14</span></div><div class="row"><span class="lab">Price</span><span class="val price">Tennis camp £100/4-day · others verify</span></div></div>
+          <div class="link"><a href="https://www.dcsportsclub.co.uk/">dcsportsclub.co.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Now</span><span class="tag local">Southwark leisure centres</span></div>
+          <h3>Swimming — Southwark GLL</h3><span class="kind">Learn-to-swim + holiday intensives</span></div>
+          <p class="desc">Local council leisure centres run learn-to-swim from young ages and holiday crash courses — the practical, close-to-home way to bank a core life-and-scholarship skill. (Or bundle via Alleyn's camp's daily swim.)</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">From ~4</span></div><div class="row"><span class="lab">Price</span><span class="val price">Council rates · verify</span></div></div>
+          <div class="link"><a href="https://www.better.org.uk/">better.org.uk ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 CAMPS ============ -->
+  <section id="camps">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04 — Holiday cover with a purpose</span>
+        <h2>Holiday camps reachable from SE15</h2>
+        <p>At Reception he unlocks the multi-activity, arts and sport camps now; the specialist STEM and academic camps start at 6–9. Note: Alleyn's excludes Reception (Year 1+). All Ofsted/voucher and 2026 dates worth confirming at booking.</p>
+      </div>
+
+      <div class="subhead">Available to him now (Reception)</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Best now</span><span class="tag now">Ages 4–11</span><span class="tag hop">JAGS, East Dulwich</span></div>
+          <h3>The Strings Club</h3><span class="kind">Music camp + multi-activity · award-winning</span></div>
+          <p class="desc">Screen-free, award-winning: mornings of real instrument tuition (violin/guitar/ukulele — free take-home for 2+ days), afternoons of sport, drama, art. Superb local reach and transparent pricing.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–11</span></div><div class="row"><span class="lab">Price</span><span class="val price">£61.50/day (ext. £71.50)</span></div></div>
+          <div class="link"><a href="https://www.thestringsclub.org/pages/dulwich-holiday-camp">thestringsclub.org ↗</a></div>
+        </div>
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Gentle academic</span><span class="tag now">Rec–Y3</span><span class="tag hop">Herne Hill School</span></div>
+          <h3>Evergreen Kids</h3><span class="kind">Creativity + sport + coding + English/maths</span></div>
+          <p class="desc">Uniquely folds short English/maths and coding bursts into a creative, outdoorsy week. Ofsted-registered, run by two primary teachers — the best "gentle academic + fun" fit for his age.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–8 (Rec–Y3)</span></div><div class="row"><span class="lab">Price</span><span class="val price">~£100/day · £475/week</span></div></div>
+          <div class="link"><a href="https://www.evergreenkids.co.uk/">evergreenkids.co.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Ages 3–11</span><span class="tag hop">Dulwich Prep, SE21</span></div>
+          <h3>The Hive @ Dulwich Prep</h3><span class="kind">Outdoor · bushcraft · science · making</span></div>
+          <p class="desc">Immersive themed "missions" blending bushcraft, science and creativity across 5 acres of woodland — a distinctive, creative alternative to sporty camps. Ofsted-registered; "Little Forest" strand for 3–5s.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">3–11</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · verify</span></div></div>
+          <div class="link"><a href="https://thehive-kids.com/collections/dulwich-prep">thehive-kids.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Ages 4–12</span><span class="tag local">Peckham SE15</span></div>
+          <h3>We Make Footballers — Peckham camps</h3><span class="kind">Football holiday camps</span></div>
+          <p class="desc">Week-long football camps every holiday at a Peckham venue — genuinely on your doorstep, flexible daily attendance, all abilities.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–12</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · verify</span></div></div>
+          <div class="link"><a href="https://www.wemakefootballers.com/peckham/holiday-camps">wemakefootballers.com ↗</a></div>
+        </div>
+      </div>
+
+      <div class="subhead">Unlocks soon — diarise by age</div>
+      <div class="grid">
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Best STEM camp</span><span class="tag later">Age 6+</span><span class="tag hop">JAGS, East Dulwich</span></div>
+          <h3>Spark-STEM</h3><span class="kind">Science · engineering · 3D printing · coding</span></div>
+          <p class="desc">The standout dedicated STEM camp locally — hands-on, well-reviewed, and the closest STEM venue to Peckham. The natural core once he ages in at 6.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">6–11</span></div><div class="row"><span class="lab">Price</span><span class="val price">Early-bird by 30 Jun · verify</span></div></div>
+          <div class="link"><a href="https://spark-stem.com/holiday-camps-dulwich/">spark-stem.com ↗</a></div>
+        </div>
+        <div class="card is-top">
+          <div class="card-top"><div class="tags"><span class="tag top">Gold-standard multi-activity</span><span class="tag later">Year 1+ (2027)</span><span class="tag hop">Alleyn's, Dulwich SE22</span></div>
+          <h3>Alleyn's Holiday Camp</h3><span class="kind">Multi-activity + daily qualified swim</span></div>
+          <p class="desc">Broad multi-activity days with a daily Swim England–taught swim, run in-house by a top independent school. Ofsted-registered, voucher-eligible. Note: does not take Reception — a Year 1 option.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">Year 1–Year 6</span></div><div class="row"><span class="lab">Price</span><span class="val price">Enquire · holidaycamps@alleyns.org.uk</span></div></div>
+          <div class="link"><a href="https://www.alleyns.org.uk/camps-and-courses/holiday-camp">alleyns.org.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Age 5–14</span><span class="tag hop">Dulwich College SE21</span></div>
+          <h3>Holiday Drop Off @ Dulwich College</h3><span class="kind">Sport-rich multi-activity</span></div>
+          <p class="desc">Multi-activity/multi-sport camp using the College's excellent facilities (8-court sports hall, 25m pool, astro, athletics track). Confirm Ofsted/ratios directly.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">5–14</span></div><div class="row"><span class="lab">Price</span><span class="val price">Not published · verify</span></div></div>
+          <div class="link"><a href="https://holidaydropoff.com/our-camps">holidaydropoff.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Age 8/9+</span><span class="tag trek">Imperial, SW7</span></div>
+          <h3>Fire Tech / FunTech camps</h3><span class="kind">Coding · game design · robotics · AI</span></div>
+          <p class="desc">The premium STEM holiday weeks for the 11+ era — Fire Tech at Imperial College; FunTech (from age 7) a South-London-ish alternative at KCS Wimbledon.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">Fire Tech 8/9+ · FunTech 7+</span></div><div class="row"><span class="lab">Price</span><span class="val price">Premium per week · verify</span></div></div>
+          <div class="link"><a href="https://www.firetech.com/">firetech.com ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag now">Ages 4–10</span><span class="tag hop">Dulwich College grounds</span></div>
+          <h3>Perform holiday courses</h3><span class="kind">Drama · dance · singing intensives</span></div>
+          <p class="desc">3–5 day performing-arts holiday courses at Dulwich College Sports Ground — confidence-building, and available to him now.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">4–10</span></div><div class="row"><span class="lab">Price</span><span class="val price">Per course · verify</span></div></div>
+          <div class="link"><a href="https://www.perform.org.uk/holiday-courses">perform.org.uk ↗</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="tags"><span class="tag later">Verify venue</span><span class="tag hop">South London</span></div>
+          <h3>Camp Beaumont — London Day Camps</h3><span class="kind">Large-scale multi-activity</span></div>
+          <p class="desc">The UK's most experienced day-camp operator (ages 3–16), Ofsted-registered, voucher-eligible — but confirm which South-London venue is nearest SE15 for 2026.</p>
+          <div class="meta"><div class="row"><span class="lab">Ages</span><span class="val">3–16</span></div><div class="row"><span class="lab">Price</span><span class="val price">See dates-and-prices page</span></div></div>
+          <div class="link"><a href="https://www.campbeaumont.co.uk/county/london-day-camps">campbeaumont.co.uk ↗</a></div>
+        </div>
+      </div>
+      <p class="note">Two-year game plan the camps agent suggested: <strong>The Strings Club</strong> and <strong>Evergreen Kids</strong> now (both take Reception, both local, both blend enrichment with fun) → add <strong>Spark-STEM at age 6</strong> and <strong>Alleyn's from Year 1</strong> as the core → bring in <strong>Fire Tech / FunTech</strong> around age 8–9 as the 11+ STEM push begins. A watch-out: Pied Piper's headline "Dulwich" camp is actually in Cranbrook, <em>Kent</em> — not daily-reachable — so confirm London (SE21) before booking anything under that name.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc">A private working directory, compiled July 2026 from providers' own websites, Ofsted's public register and current listings. Prices, ages and dates shift year to year and several were not publicly listed at time of research (marked "verify" / "enquire") — confirm each directly before committing, and independently satisfy yourself on safeguarding, DBS and Ofsted status. Nothing here is a recommendation of a specific provider or a guarantee of admission.</p>
+  </div>
+</footer>
+
+
