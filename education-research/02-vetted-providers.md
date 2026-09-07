@@ -151,6 +151,14 @@ research — treat all prices as "verify".*
 | **Fire Tech / FunTech** | 8/9+ / 7+ | Imperial SW7 / KCS Wimbledon | Premium STEM weeks for the 11+ era |
 | **Camp Beaumont** | 3–16 | Blackheath nearest | Playtime 3–4, Magic 5–7. Ofsted-reg, voucher-eligible |
 
+### ⚠️ 2026 term-date correction affecting all Dulwich venues
+
+For **2026-27**, Dulwich College and Dulwich Prep half term is **24 Oct – 8 Nov**, and Herne Hill
+School is **26 Oct – 6 Nov** — NOT the "16–31 Oct" figure quoted elsewhere, which is stale 2025
+data. Camps at those venues therefore do **not** run the week of 19–23 Oct. See
+`04-october-half-term-2026.md`. Also note **Spark-STEM is ages 6–11** and **Alleyn's excludes
+Reception children entirely** (their own wording), independent of dates.
+
 ### ⚠️ Booking trap
 **Pied Piper's headline "Dulwich" camp is at Cranbrook, KENT** — the Dulwich Prep *Kent* site,
 not daily-reachable from Peckham. Confirm London (SE21) before booking anything under that name.
