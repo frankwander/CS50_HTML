@@ -51,12 +51,22 @@ SW6 is a genuine trek. Backup only.
 - **Little Forest Folk** — 26–30 Oct only
 - **Mother Nature Science** — does run Mon 19–Fri 23, but ages 5–12 and NE/SW London venues
 
-## ⚠️ Resolve first: his exact age
+## ✅ RESOLVED: Bas is 5
 
-The binding constraint. Starting Reception Sept 2026 means he's **4, possibly just turned 5**.
-It decides everything at Dulwich College Sports Club — HDO needs **5+**, Munchkins is **under 5**
-— and he may fall awkwardly between them. JAGS (4+) and The Strings Club (4+) don't have that
-problem, which is another reason to lead with them.
+Confirmed by the parent, Sept 2026. This unblocks the age question:
+
+- **Dulwich College Sports Club — HDO (ages 5–14): now ELIGIBLE** ✅
+- **Munchkins (under 5): no longer applicable** ❌
+- JAGS Sports Club (4–16) and The Strings Club (4–11): eligible ✅
+- **Camp Beaumont**: he moves from "Playtime" (3–4) to the **"Magic" strand (5–7)** ✅
+- **Alleyn's** still likely out — it takes **Year 1 upward** and Bas is in Reception. Being 5
+  does not by itself make him eligible; check whether they go by year group or age.
+
+## Already secured
+
+**The Hive @ BLACKHEATH** — the family has this one. Note this is a *different site* from
+The Hive @ Dulwich Prep, which is ruled out because Dulwich Prep is in session during week one.
+The Blackheath site runs to its own calendar.
 
 ## Free filler
 
